@@ -15,11 +15,14 @@ cp /root/fstab.new /etc/fstab
 chmod 644 /etc/fstab
 mount -a
 userdel -f ubuntu
+rm -rf /home/ubuntu/
 groupadd -g 1000 seed
 mkdir /home/seed
 mkdir /home/seed/.ssh
 cp /root/.ssh/authorized_keys /home/seed/.ssh/authorized_keys
-chown 1000:1000 /home/seed/.ssh/authorized_keys
+chown -R 1000:1000 /home/seed
 chmod 600 /home/seed/.ssh/authorized_keys
 sudo rm -rf /usr/lib/python3/dist-packages/PyYAML-*
+cd /root
+curl -s https://raw.githubusercontent.com/Cloudbox/cb/develop/cb_install.sh | sudo -H bash
 reboot
