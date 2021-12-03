@@ -14,4 +14,11 @@ rm /root/fstab.tmp
 cp /root/fstab.new /etc/fstab
 chmod 644 /etc/fstab
 mount -a
+userdel -f ubuntu
+groupadd -g 1000 seed
+mkdir /home/seed
+mkdir /home/seed/.ssh
+cp /root/.ssh/authorized_keys /home/seed/.ssh/authorized_keys
+chown 1000:1000 /home/seed/.ssh/authorized_keys
+chmod 600 /home/seed/.ssh/authorized_keys
 reboot
