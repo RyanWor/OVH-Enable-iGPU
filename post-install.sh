@@ -21,4 +21,5 @@ mkdir /home/seed/.ssh
 cp /root/.ssh/authorized_keys /home/seed/.ssh/authorized_keys
 chown 1000:1000 /home/seed/.ssh/authorized_keys
 chmod 600 /home/seed/.ssh/authorized_keys
+sudo rm -rf /usr/lib/python3/dist-packages/PyYAML-*
 reboot
